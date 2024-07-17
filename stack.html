@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack Visualizer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .main-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+
+      .left-sidebar,
+      .right-sidebar {
+        width: 15%;
+        background-color: #2c3e50;
+      }
+
+      .content {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ecf0f1;
+      }
+
+      .stack-visualizer {
+        text-align: center;
+      }
+
+      .stack-container {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: center;
+        border: 2px solid #000;
+        height: 300px;
+        width: 200px;
+        margin: 20px auto;
+        background-color: #fff;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .stack-element {
+        width: 100%;
+        border-bottom: 1px solid #000;
+        padding: 10px;
+        background-color: #61dafb;
+        color: #000;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        position: relative;
+      }
+
+      .stack-element.push {
+        animation: pushAnimation 0.3s ease;
+      }
+
+      .stack-element.pop {
+        animation: popAnimation 0.3s ease forwards;
+      }
+
+      @keyframes pushAnimation {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes popAnimation {
+        from {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+      }
+
+      input {
+        padding: 10px;
+        margin: 10px;
+        width: 150px;
+        box-sizing: border-box;
+      }
+
+      button {
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: #61dafb;
+        border: none;
+        color: #fff;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #21a1f1;
+      }
+
+      .stack-status {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #bdc3c7;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="left-sidebar">
+        <!-- Add content for the left sidebar if needed -->
+      </div>
+      <div class="content">
+        <div class="stack-visualizer">
+          <h1>Stack Visualizer</h1>
+          <input
+            type="text"
+            id="stackInput"
+            placeholder="Enter value to push"
+          />
+          <button onclick="push()">Push</button>
+          <button onclick="pop()">Pop</button>
+          <div class="stack-container" id="stackContainer">
+            <!-- Stack elements will be visualized here -->
+          </div>
+          <div class="stack-status" id="stackStatus">
+            <!-- Stack status will be displayed here -->
+          </div>
+        </div>
+      </div>
+      <div class="right-sidebar">
+        <!-- Add content for the right sidebar if needed -->
+      </div>
+    </div>
+    <script>
+      const stackContainer = document.getElementById("stackContainer");
+      const stackStatus = document.getElementById("stackStatus");
+      let stack = [];
+
+      function push() {
+        const value = document.getElementById("stackInput").value;
+        if (value === "") {
+          alert("Please enter a value to push");
+          return;
+        }
+        stack.push(value);
+        document.getElementById("stackInput").value = "";
+        renderStack();
+        updateStatus();
+      }
+
+      function pop() {
+        if (stack.length === 0) {
+          alert("Stack is empty");
+          return;
+        }
+        const poppedElement = document.querySelector(".stack-element");
+        poppedElement.classList.add("pop");
+        setTimeout(() => {
+          stack.pop();
+          renderStack();
+          updateStatus();
+        }, 300); // Duration of pop animation
+      }
+
+      function renderStack() {
+        stackContainer.innerHTML = "";
+        for (let i = 0; i < stack.length; i++) {
+          const stackElement = document.createElement("div");
+          stackElement.classList.add("stack-element", "push");
+          stackElement.textContent = stack[i];
+          stackContainer.appendChild(stackElement);
+          // Remove the 'push' class after animation completes
+          setTimeout(() => {
+            stackElement.classList.remove("push");
+          }, 300); // Duration of push animation
+        }
+      }
+
+      function updateStatus() {
+        stackStatus.textContent = `isEmpty: ${stack.length === 0}`;
+      }
+    </script>
+  </body>
+</html>
