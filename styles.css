@@ -27,12 +27,16 @@ header {
 .logo {
     margin-left: 100px;
 }
-
+.logo img {
+    width: 200px;
+}
 .hamburger {
     margin-right: 100px;
-    font-size: 25px;
-    font-weight: 700;
+    width: 40px;
     cursor: pointer;
+}
+.hamburger img {
+    width: 100%;
 }
 .hero-section {
     background-color: #e4e4e7;
@@ -51,15 +55,61 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
 }
 .try-now-btn {
     padding: 10px 25px;
     border-radius: 3px;
-    border: 1px solid rgb(9, 9, 11);
-    background-color: #f4f4f5;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgb(9, 9, 11);
+    border: none;
+    font-family: "IBM Plex Mono", monospace;
+    color: #f4f4f5;
     margin-top: 20px;
     cursor: pointer;
+    transition: background-color ease-in-out 0.2s;
+}
+.try-now-btn:hover {
+    background-color: #f4f4f5;
+    color: rgb(9, 9, 11);
+    border: 1px solid rgb(9, 9, 11);
+}
+
+@media (max-width: 800px) {
+    .hero-section p {
+        padding: 20px 10%;
+    }
+}
+@media (max-width: 600px) {
+    .logo img {
+        width: 150px;
+    }
+    .hero-section {
+        padding: 30px;
+    }
+    .hero-section p {
+        padding: 20px 10%;
+    }
+    .hamburger {
+        margin-right: 30px;
+        width: 30px;
+    }  
+    .logo {
+        margin-left: 40px;
+    }  
+    .hero-section h1 {
+        font-size: 20px;
+     }
+    .hero-section p {
+        font-size: 15px;
+        padding: 20px 30px;
+    }
+}
+@media (max-width: 400px) {
+    .hero-section p {
+        font-size: 13px;
+        padding: 10px;
+    }
 }
 
 /* Hero section ends */
@@ -81,7 +131,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 .card {
@@ -92,6 +142,10 @@ header {
     border-radius: 5px;
     cursor: pointer;
     overflow: hidden;
+    transition: all ease-in-out 0.3s;
+}
+.card:hover {
+    transform: scale(1.03);
 }
 .card img {
     padding: 20px 100px;
@@ -99,9 +153,120 @@ header {
     height: 50%;
 }
 .card p {
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 13px;
+    width: 100%;
+    text-align: justify;
+}
+@media (max-width: 800px) {
+    .card-section p {
+        padding: 0px 20px;
+    }
+}
+@media (max-width: 600px) {
+    .card-section h2 {
+        font-size: 18px;
+    }
+    .card-section p {
+        padding: 0px 30px;
+        font-size: 15px;
+    }
+    .card {
+        width: 240px;
+        height: 280px;
+    }
+    .card img {
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    .card p {
+        display: none;
+    }
 }
 
 
 /* Card Section ends */
+
+/* Footer Section Starts */
+
+footer {
+    background-color: #e4e4e7;
+    padding: 40px;
+}
+.form-container {
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.decription {
+    width: 40%;
+}
+.decription p {
+    margin-top: 10px;
+    line-height: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+}
+form input, textarea {
+    border: none;
+    padding: 10px;
+    background-color: #f4f4f5;
+    box-shadow: 4px 4px 4px rgb(9, 9, 11, 0.1);
+    border-radius: 4px;
+}
+form input[type = "button"] {
+    cursor: pointer;
+    background-color: rgb(9, 9, 11);
+    border: none;
+    font-family: "IBM Plex Mono", monospace;
+    color: #f4f4f5;
+    transition: all ease-in-out 0.2s;
+}
+form input[type = "button"]:hover {
+    background-color: #f4f4f5;
+    color: rgb(9, 9, 11);
+    border: 1px solid rgb(9, 9, 11);
+}
+.lists {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.list {
+    line-height: 25px;
+}
+@media (max-width: 850px) {
+    .list p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 650px) {
+    .lists {
+        display: none;
+    }
+}
+@media (max-width: 600px) {
+    footer {
+        padding: 20px;
+    }
+    .form-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    form {
+        width: 100%;
+    }
+    .decription {
+        width: 100%;
+    }
+    .decription p {
+        font-size: 13px;
+    }
+}
+
+/* Footer Section Ends */
