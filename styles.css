@@ -14,15 +14,43 @@ body {
     font-family: "IBM Plex Mono", monospace;
 }
 
+.container {
+    margin: auto;
+    max-width: 1440px;
+}
+
 /* Hero section starts */
 
 header {
     height: 70px;
+    width: 100%;
     background-color: #e4e4e7;
     display: flex;
     border-bottom: 1px solid;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    transition: 0.4s;
+    animation: navColor 4s forwards;
+    animation-timeline: scroll();
+}
+@keyframes navColor {
+    0% {
+        background-color: transparent;
+    }
+
+    30% {
+        background-color: #e4e4e7;
+    }
+
+    100% {
+        background-color: #e4e4e7;
+    }
 }
 .logo {
     margin-left: 100px;
@@ -40,7 +68,7 @@ header {
 }
 .hero-section {
     background-color: #e4e4e7;
-    padding: 70px;
+    padding: 100px 70px;
 }
 .hero-section h1 {
    text-align: center;
@@ -67,12 +95,12 @@ header {
     color: #f4f4f5;
     margin-top: 20px;
     cursor: pointer;
+    border: 1px solid rgb(9, 9, 11);
     transition: background-color ease-in-out 0.2s;
 }
 .try-now-btn:hover {
     background-color: #f4f4f5;
     color: rgb(9, 9, 11);
-    border: 1px solid rgb(9, 9, 11);
 }
 
 @media (max-width: 800px) {
@@ -85,7 +113,7 @@ header {
         width: 150px;
     }
     .hero-section {
-        padding: 30px;
+        padding: 100px 40px;
     }
     .hero-section p {
         padding: 20px 10%;
@@ -225,12 +253,12 @@ form input[type = "button"] {
     border: none;
     font-family: "IBM Plex Mono", monospace;
     color: #f4f4f5;
+    border: 1px solid rgb(9, 9, 11);
     transition: all ease-in-out 0.2s;
 }
 form input[type = "button"]:hover {
     background-color: #f4f4f5;
     color: rgb(9, 9, 11);
-    border: 1px solid rgb(9, 9, 11);
 }
 .lists {
     margin-top: 30px;

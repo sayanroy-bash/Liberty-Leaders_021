@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sort Visualizer</title>
+    <link rel="stylesheet" href="./mergeSortStyles.css">
+</head>
+<body>
+        <header>
+            <div class="logo"><img src="assets/logo.webp"  alt="Code Visualizer"></div>
+            <div class="hamburger"><img src="assets/hamburger.webp" alt="btn"></div>
+        </header>
+        <main>
+        <section>
+            <div class="container">
+                <h1>Merge Sort Visualizer</h1>
+            <div class="controls">
+                <button id="sort_button">Start Sorting</button>
+                <label for="speed">Speed: </label>
+                <input type="range" id="speed" min="1" max="30" value="15" oninput="updateSpeed()">
+            </div>
+            <div class="bar-container" id="barContainer"></div>
+        
+            <div class="take-input">
+                <input type="text" id="input_numbers" placeholder="Enter numbers seperated by comma" size="50">
+                <button id="random_array_generate"  > Generate Array</button>
+            </div>
+            </div>
+            <div class="description">
+                <h3>Overview</h3>
+                <p>Divides the array into halves recursively, sorts each half, and merges them to achieve a sorted array.</p>
+                <h3>Time Complexity</h3>
+                <p>O(n log n)</p>
+                <h3>Space Complexity</h3>
+                <p>O(n) - requires additional memory proportional to the array size</p>
+            </div>
+        </section>
+        </main>
+
+    <script src="./mergeSort.js"></script>
+</body>
+</html>
