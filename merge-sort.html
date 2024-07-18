@@ -9,11 +9,16 @@
 <body>
     <h1>Merge Sort Visualizer</h1>
     <div class="controls">
-        <button onclick="startSort()">Start Sorting</button>
+        <button id="sort_button">Start Sorting</button>
         <label for="speed">Speed: </label>
-        <input type="range" id="speed" min="1" max="100" value="50" oninput="updateSpeed()">
+        <input type="range" id="speed" min="1" max="30" value="15" oninput="updateSpeed()">
     </div>
     <div class="bar-container" id="barContainer"></div>
+
+    <div class="take-input">
+        <input type="text" id="input_numbers" placeholder="Enter numbers seperated by comma" size="50">
+        <button id="random_array_generate"  > Generate Array</button>
+    </div>
 
     <script src="./mergeSort.js"></script>
 </body>
