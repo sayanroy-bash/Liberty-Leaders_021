@@ -13,18 +13,69 @@ h1 {
     margin: 20px;
 }
 
+.controls>button{
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    color: white;
+    font-weight: 600px;
+    background-color: crimson;
+}
+.controls>button:hover{
+    cursor: pointer;
+    background-color: rgb(206, 106, 126);
+}
+.controls>button:active{
+    background-color: navy;
+}
+
 .bar-container {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 400px;
-    width: 80%;
+    height: 450px;
+    width: 50%;
     border: 1px solid #ccc;
     margin-top: 20px;
+    padding-top: 10px;
 }
 
 .bar {
     margin: 0 2px;
     background-color: steelblue;
     width: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+}
+.take-input{
+    margin-top: 20px;
+    /* border: 1px solid; */
+    border-radius: 8px;
+    padding: 5px;
+    background-color: rgb(108, 88, 218);
+
+}
+.take-input>input{
+    padding: 15px 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(225, 214, 243);
+}
+.take-input>button{
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: orchid;
+    color: #fff;
+
+}
+.take-input>button:hover{
+    background-color: rgb(161, 11, 161);
+    cursor: pointer;
+}
+.take-input>button:active{
+    background-color: navy;
 }
