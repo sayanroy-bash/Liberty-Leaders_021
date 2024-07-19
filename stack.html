@@ -11,7 +11,7 @@
     <div class="container">
       <header>
         <div class="logo"><img src="assets/logo.webp"  alt="Code Visualizer"></div>
-        <div class="hamburger"><img src="assets/hamburger.webp" alt="btn"></div>
+        <div class="hamburger"><img src="assets/hamburger.webp" alt="btn" class="hamburger-btn"></div>
     </header>
       <section>
         <div class="main-container">
@@ -93,55 +93,26 @@
         </div>
       </section>
     </div>
+    <!-- sidebar starts -->
+    <div class="sidebar-section">
+      <div class="sidebar">
+          <div class="title-img-container">
+              <h2>Explore More!</h2>
+              <img src="./assets/cutBtn.webp" alt="cut" class="toggle-btn">
+          </div>
+          <div class="btn-container">
+              <button id="stack">Stack</button>
+              <button id="queue">Queue</button>
+              <button id="merge-sort">Merge Sort</button>
+              <button id="binary-search">Binary Search</button>
+              <button id="selection-sort">Selection Sort</button>
+              <button id="bubble-sort">Bubble Sort</button>
+          </div>
+      </div>    
+  </div>
+  <!-- sidebar ends -->
 
-    <script>
-      const stackContainer = document.getElementById("stackContainer");
-      const stackStatus = document.getElementById("stackStatus");
-      let stack = [];
-
-      function push() {
-        const value = document.getElementById("stackInput").value;
-        if (value === "") {
-          alert("Please enter a value to push");
-          return;
-        }
-        stack.push(value);
-        document.getElementById("stackInput").value = "";
-        renderStack();
-        updateStatus();
-      }
-
-      function pop() {
-        if (stack.length === 0) {
-          alert("Stack is empty");
-          return;
-        }
-        const poppedElement = document.querySelector(".stack-element");
-        poppedElement.classList.add("pop");
-        setTimeout(() => {
-          stack.pop();
-          renderStack();
-          updateStatus();
-        }, 300); // Duration of pop animation
-      }
-
-      function renderStack() {
-        stackContainer.innerHTML = "";
-        for (let i = 0; i < stack.length; i++) {
-          const stackElement = document.createElement("div");
-          stackElement.classList.add("stack-element", "push");
-          stackElement.textContent = stack[i];
-          stackContainer.appendChild(stackElement);
-          // Remove the 'push' class after animation completes
-          setTimeout(() => {
-            stackElement.classList.remove("push");
-          }, 300); // Duration of push animation
-        }
-      }
-
-      function updateStatus() {
-        stackStatus.textContent = `isEmpty: ${stack.length === 0}`;
-      }
-    </script>
+  <script src="script.js"></script>
+    <script src="stack.js"></script>
   </body>
 </html>

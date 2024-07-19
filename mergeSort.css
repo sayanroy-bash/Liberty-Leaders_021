@@ -148,8 +148,7 @@ h1 {
     width: 270px;
     padding: 15px;
     border-radius: 3px;
-    border: none;
-    box-shadow: 4px 4px 4px rgb(9, 9, 11, 0.1);
+    border: 2px solid #e4e4e7;
     background-color: #f4f4f5;
 }
 .take-input>button{
@@ -232,3 +231,67 @@ h1 {
             font-size: 14px;
         }
 } 
+
+/* Sidebar Starts */
+
+.sidebar-section {
+    display: none;
+}
+.sidebar {
+    z-index: 1000;
+    width: 300px;
+    padding: 20px;
+    background-color: #e4e4e7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: fit-content;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 4px;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    color: rgb(9, 9, 11);
+}
+.sidebar button {
+    cursor: pointer;
+    background-color: rgb(9, 9, 11);
+    border: 1px solid rgb(9, 9, 11);
+    color: #f4f4f4;
+    border-radius: 3px;
+    width: 200px;
+    padding: 10px 0px;
+    transition: background-color ease-in-out 0.2s;
+}
+
+.title-img-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.title-img-container img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.sidebar button:hover {
+    background-color: #e4e4e7;
+    color: rgb(9, 9, 11);
+}
+
+/* Sidebar Ends */

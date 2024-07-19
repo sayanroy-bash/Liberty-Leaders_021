@@ -241,10 +241,9 @@ form {
     width: 40%;
 }
 form input, textarea {
-    border: none;
+    border: 2px solid #e4e4e7;
     padding: 10px;
     background-color: #f4f4f5;
-    box-shadow: 4px 4px 4px rgb(9, 9, 11, 0.1);
     border-radius: 4px;
 }
 form input[type = "button"] {
