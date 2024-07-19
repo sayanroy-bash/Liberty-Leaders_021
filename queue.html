@@ -4,190 +4,133 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Queue Visualizer</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #f5f5f5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-
-      .main-container {
-        display: flex;
-        width: 100%;
-        height: 100%;
-      }
-
-      .left-sidebar,
-      .right-sidebar {
-        width: 15%;
-        background-color: #2c3e50;
-      }
-
-      .content {
-        width: 70%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #ecf0f1;
-      }
-
-      .queue-visualizer {
-        text-align: center;
-      }
-
-      .queue-container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        border: 2px solid #000;
-        height: 100px;
-        width: 400px;
-        margin: 20px auto;
-        background-color: #fff;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .queue-element {
-        width: 60px;
-        height: 60px;
-        border: 1px solid #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #61dafb;
-        color: #000;
-        margin: 0 5px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        position: relative;
-      }
-
-      .queue-element.enqueue {
-        animation: enqueueAnimation 0.3s ease;
-      }
-
-      .queue-element.dequeue {
-        animation: dequeueAnimation 0.3s ease forwards;
-      }
-
-      @keyframes enqueueAnimation {
-        from {
-          transform: translateX(-50px);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-
-      @keyframes dequeueAnimation {
-        from {
-          transform: translateX(0);
-          opacity: 1;
-        }
-        to {
-          transform: translateX(50px);
-          opacity: 0;
-        }
-      }
-
-      input {
-        padding: 10px;
-        margin: 10px;
-        width: 150px;
-        box-sizing: border-box;
-      }
-
-      button {
-        padding: 10px;
-        margin: 10px;
-        cursor: pointer;
-        background-color: #61dafb;
-        border: none;
-        color: #fff;
-        transition: background-color 0.3s ease;
-      }
-
-      button:hover {
-        background-color: #21a1f1;
-      }
-
-      .queue-status {
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #bdc3c7;
-        border-radius: 5px;
-      }
-    </style>
+    <link rel="stylesheet" href="queue.css" />
   </head>
   <body>
-    <div class="main-container">
-      <div class="left-sidebar"></div>
-      <div class="content">
-        <div class="queue-visualizer">
-          <h1>Queue Visualizer</h1>
-          <input type="text" id="queueInput" placeholder="Enter value" />
-          <button onclick="enqueue()">Enqueue</button>
-          <button onclick="dequeue()">Dequeue</button>
-          <div id="queueContainer" class="queue-container"></div>
-          <div id="queueStatus" class="queue-status">isEmpty: true</div>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="assets/logo.webp" alt="Code Visualizer"/>
         </div>
-      </div>
-      <div class="right-sidebar"></div>
+        <div class="hamburger">
+          <img src="assets/hamburger.webp" alt="btn" class="hamburger-btn"/>
+        </div>
+      </header>
+      <section>
+        <div class="main-container">
+          <div class="content">
+            <div class="queue-visualizer">
+              <h1>Queue Visualizer</h1>
+              <div class="input-container">
+                <input type="text" id="queueInput" placeholder="Enter value" />
+                <div class="btn-container">
+                  <button onclick="enqueue()">Enqueue</button>
+                  <button onclick="dequeue()">Dequeue</button>
+                </div>
+              </div>
+              <div id="queueContainer" class="queue-container"></div>
+              <div id="queueStatus" class="queue-status">isEmpty: true</div>
+            </div>
+          </div>
+          <div class="description">
+            <h3>OVERVIEW</h3>
+            <p>
+              A Queue Data Structure is a fundamental concept in computer science
+              used for storing and managing data in a specific order. It follows
+              the principle of 'First In, First Out' (FIFO), where the first
+              element added to the queue is the first one to be removed. Queues
+              are commonly used in various algorithms and applications for their
+              simplicity and efficiency in managing data flow.
+            </p>
+            <h3>WHAT IS QUEUE IN DATA STRUCTURES?</h3>
+            <p>
+              A queue is a linear data structure that follows the
+              First-In-First-Out (FIFO) principle. It operates like a line where
+              elements are added at one end (rear) and removed from the other end
+              (front). The first element added to the queue is the first one to be
+              removed.
+            </p>
+            <h3>BASIC OPERATIONS OF QUEUE DATA STRUCTURE?</h3>
+            <p>
+              Enqueue (Insert): Adds an element to the rear of the queue. Dequeue
+              (Delete): Removes and returns the element from the front of the
+              queue. Peek (Front): Returns the element at the front of the queue
+              without removing it. isEmpty: Checks if the queue is empty. Size:
+              Checks the number of elements in the queue.
+            </p>
+            <h3>PROPERTIES OF QUEUE</h3>
+            <p>
+              Order: Queues maintain the order of elements based on the FIFO
+              principle. Dynamic Size: The size of the queue can change
+              dynamically as elements are added or removed. Access: Elements can
+              be added at the rear and removed from the front of the queue.
+            </p>
+            <h3>APPLICATIONS OF QUEUE</h3>
+            <p>
+              Task Scheduling: Used in operating systems for managing tasks and
+              processes. Data Transfer: Utilized in network communication
+              protocols to manage data packets. Simulation: Simulates real-world
+              systems like waiting lines and customer service. Breadth-First
+              Search (BFS): Implements BFS algorithm for graph traversal. Print
+              Spooling: Manages print jobs in a printer queue.
+            </p>
+            <h3>ADVANTAGES OF USING QUEUE</h3>
+            <p>
+              Order Preservation: Maintains the order of elements, ensuring
+              first-come, first-served processing. Efficiency: Provides efficient
+              handling of data in real-time systems and applications. Simplicity:
+              Simple to implement and use for managing data with FIFO order.
+            </p>
+            <h3>DISADVANTAGES OF USING QUEUE</h3>
+            <p>
+              Limited Access: Can only access the front and rear elements, making
+              random access difficult. Fixed Size (in some implementations):
+              Static queues have a fixed size, which can be limiting if not
+              managed properly.
+            </p>
+            <h3>QUEUE VARIATIONS</h3>
+            <p>
+              Double-Ended Queue (Deque): Allows insertion and deletion from both
+              ends. Circular Queue: A queue implementation where the last position
+              is connected back to the first position, forming a circle. Priority
+              Queue: Elements are dequeued based on priority rather than the order
+              of insertion.
+            </p>
+            <h3>REAL-WORLD EXAMPLES OF QUEUES</h3>
+            <p>
+              Customer Service: Managing customers in a service line or call
+              center. Printer Queue: Handling multiple print jobs sent to a
+              printer. CPU Scheduling: Managing processes in an operating system.
+              Network Buffers: Storing data packets in routers and switches.
+              Message Queuing: Managing messages between distributed systems and
+              applications.
+            </p>
+          </div>
+        </div>
+        
+      </section>
     </div>
-    <script>
-      const queueContainer = document.getElementById("queueContainer");
-      const queueStatus = document.getElementById("queueStatus");
-      let queue = [];
 
-      function enqueue() {
-        const value = document.getElementById("queueInput").value;
-        if (value === "") {
-          alert("Please enter a value to enqueue");
-          return;
-        }
-        queue.push(value);
-        document.getElementById("queueInput").value = "";
-        renderQueue();
-        updateStatus();
-      }
+    <!-- sidebar starts -->
+    <div class="sidebar-section">
+      <div class="sidebar">
+          <div class="title-img-container">
+              <h2>Explore More!</h2>
+              <img src="./assets/cutBtn.webp" alt="cut" class="toggle-btn">
+          </div>
+          <div class="btn-container">
+              <button id="stack">Stack</button>
+              <button id="queue">Queue</button>
+              <button id="merge-sort">Merge Sort</button>
+              <button id="binary-search">Binary Search</button>
+              <button id="selection-sort">Selection Sort</button>
+              <button id="bubble-sort">Bubble Sort</button>
+          </div>
+      </div>    
+  </div>
+  <!-- sidebar ends -->
 
-      function dequeue() {
-        if (queue.length === 0) {
-          alert("Queue is empty");
-          return;
-        }
-        const dequeuedElement = document.querySelector(".queue-element");
-        dequeuedElement.classList.add("dequeue");
-        setTimeout(() => {
-          queue.shift();
-          renderQueue();
-          updateStatus();
-        }, 300); // Duration of dequeue animation
-      }
-
-      function renderQueue() {
-        queueContainer.innerHTML = "";
-        for (let i = 0; i < queue.length; i++) {
-          const queueElement = document.createElement("div");
-          queueElement.classList.add("queue-element", "enqueue");
-          queueElement.textContent = queue[i];
-          queueContainer.appendChild(queueElement);
-          // Remove the 'enqueue' class after animation completes
-          setTimeout(() => {
-            queueElement.classList.remove("enqueue");
-          }, 300); // Duration of enqueue animation
-        }
-      }
-
-      function updateStatus() {
-        queueStatus.textContent = `isEmpty: ${queue.length === 0}`;
-      }
-    </script>
+    <script src="script.js"></script>
+    <script src="queue.js"></script>
   </body>
 </html>
