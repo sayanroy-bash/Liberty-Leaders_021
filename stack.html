@@ -7,32 +7,93 @@
     <link rel="stylesheet" href="stack.css">
   </head>
   <body>
-    <div class="main-container">
-      <div class="left-sidebar">
-        <!-- Add content for the left sidebar if needed -->
-      </div>
-      <div class="content">
-        <div class="stack-visualizer">
-          <h1>Stack Visualizer</h1>
-          <input
-            type="text"
-            id="stackInput"
-            placeholder="Enter value to push"
-          />
-          <button onclick="push()">Push</button>
-          <button onclick="pop()">Pop</button>
-          <div class="stack-container" id="stackContainer">
-            <!-- Stack elements will be visualized here -->
+    
+    <div class="container">
+      <header>
+        <div class="logo"><img src="assets/logo.webp"  alt="Code Visualizer"></div>
+        <div class="hamburger"><img src="assets/hamburger.webp" alt="btn"></div>
+    </header>
+      <section>
+        <div class="main-container">
+          <div class="left-sidebar">
+            <!-- Add content for the left sidebar if needed -->
           </div>
-          <div class="stack-status" id="stackStatus">
-            <!-- Stack status will be displayed here -->
+          <div class="content">
+            <div class="stack-visualizer">
+              <h1>Stack Visualizer</h1>
+              <div class="input-container">
+                <input
+                type="text"
+                id="stackInput"
+                placeholder="Enter value to push"
+              />
+              <div>
+                <button onclick="push()">Push</button>
+              <button onclick="pop()">Pop</button>
+              </div>
+              </div>
+              <div class="stack-container" id="stackContainer">
+                <!-- Stack elements will be visualized here -->
+              </div>
+              <div class="stack-status" id="stackStatus">
+                <!-- Stack status will be displayed here -->
+              </div>
+            </div>
+          </div>
+          <div class="right-sidebar">
+            <!-- Add content for the right sidebar if needed -->
+          </div>
+          <div class="description">
+            <h3>OVERVIEW</h3>
+            <p>
+              A Stack Data Structure is a fundamental concept in computer science used for storing and managing data in a specific order. It follows the principle of 'Last In, First Out' (LIFO), where the last element added to the stack is the first one to be removed. Stacks are commonly used in various algorithms and applications for their simplicity and efficiency in managing data flow.</p>
+              <h3>WHAT IS STACK IN DATA STRUCTURES?</h3>
+              <p>A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. It operates like a pile of books where elements are added and removed from the top. The most recently added element is the first one to be removed.</p>
+              
+              <h3>BASIC OPERATIONS OF STACK DATA STRUCTURE?</h3>
+              <p>Push (Insert): Adds an element to the top of the stack.
+                Pop (Delete): Removes and returns the element from the top of the stack.
+                Peek (Top): Returns the element at the top of the stack without removing it.
+                isEmpty: Checks if the stack is empty.
+                Size: Checks the number of elements in the stack.</p>
+              
+              <h3>PROPERTIES OF STACK</h3>
+              <p>Order: Stacks maintain the order of elements based on the LIFO principle.
+                Dynamic Size: The size of the stack can change dynamically as elements are added or removed.
+                Access: Elements can only be accessed, added, or removed from the top of the stack.</p>
+              
+              <h3>APPLICATIONS OF STACK</h3>
+              <p>Expression Evaluation: Used in evaluating arithmetic expressions, including infix, postfix, and prefix notations.
+                Syntax Parsing: Essential in parsing expressions, code, and syntax in compilers and interpreters.
+                Backtracking Algorithms: Used in algorithms like maze solving, depth-first search (DFS), and finding paths.
+                Function Call Management: Manages function calls and returns in recursion, storing return addresses and local variables.
+                Undo Mechanisms: Implements undo features in text editors and other software applications.
+                Navigation: Manages the history of visited pages in web browsers, allowing users to navigate back and forth.</p>
+              
+              <h3>ADVANTAGES OF USING STACK</h3>
+              <p>Simplicity: Easy to implement and use for managing data with LIFO order.
+                Efficiency: Provides efficient access to the most recently added elements.
+                Memory Management: Helps in memory management through function call management in recursion.</p>
+              
+              <h3>DISADVANTAGES OF USING STACK</h3>
+             <p>Limited Access: Can only access the top element, making random access impossible.
+              Fixed Size (in some implementations): Static stacks have a fixed size, which can be limiting if not managed properly.</p>
+              
+              <h3>STACK VARIATIONS</h3>
+              <p>Double-Ended Stack (Deque): Allows insertion and deletion from both ends.
+                Circular Stack: A stack implementation where the last position is connected back to the first position, forming a circle.</p>
+              
+              <h3>REAL-WORLD EXAMPLES OF STACKS</h3>
+              <p>Call Stack: Used by programming languages to keep track of function calls.
+                Browser History: Back and forward navigation in web browsers.
+                Text Editor Undo: Stores the history of changes to enable undo functionality.
+                Balanced Parentheses: Checking balanced parentheses in an expression.
+                Expression Conversion: Converting infix expressions to postfix or prefix forms.</p>  
           </div>
         </div>
-      </div>
-      <div class="right-sidebar">
-        <!-- Add content for the right sidebar if needed -->
-      </div>
+      </section>
     </div>
+
     <script>
       const stackContainer = document.getElementById("stackContainer");
       const stackStatus = document.getElementById("stackStatus");
