@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Sort Visualizer</title>
+    <style>
+      /* styles.css */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        height: 70vh;
+        width: 100%;
+      }
+
+      #array-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        height: 100%;
+        width: 80%;
+      }
+
+      .bar {
+        width: 30px;
+        margin: 0 5px;
+        background-color: #3498db;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        color: #fff;
+        font-size: 14px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      input[type="text"] {
+        margin-bottom: 10px;
+        padding: 5px;
+      }
+
+      button {
+        margin-bottom: 10px;
+        padding: 5px 10px;
+      }
+
+      label {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="array-container"></div>
+    </div>
+    <form id="array-form">
+      <label for="array-input">Enter an array (comma separated):</label>
+      <input type="text" id="array-input" placeholder="e.g. 5, 3, 8, 4, 2" />
+      <button type="submit">Sort</button>
+      <label for="speed-input">Animation Speed:</label>
+      <input type="range" id="speed-input" min="10" max="1000" value="300" />
+    </form>
+    <script>
+      // script.js
+      document
+        .getElementById("array-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const input = document.getElementById("array-input").value;
+          const array = input.split(",").map(Number);
+          const speed = document.getElementById("speed-input").value;
+          visualizeBubbleSort(array, speed);
+        });
+
+      document
+        .getElementById("speed-input")
+        .addEventListener("input", function () {
+          const speedLabel = document.querySelector('label[for="speed-input"]');
+          speedLabel.textContent = `Animation Speed: ${this.value}ms`;
+        });
+
+      async function visualizeBubbleSort(array, speed) {
+        const container = document.getElementById("array-container");
+        container.innerHTML = "";
+
+        // Create bars for the array elements
+        array.forEach((num) => {
+          const bar = document.createElement("div");
+          bar.className = "bar";
+          bar.style.height = `${num * 10}px`;
+          bar.textContent = num;
+          container.appendChild(bar);
+        });
+
+        // Bubble Sort algorithm with visualization
+        let bars = document.querySelectorAll(".bar");
+        for (let i = 0; i < array.length; i++) {
+          for (let j = 0; j < array.length - i - 1; j++) {
+            bars[j].style.backgroundColor = "#e74c3c";
+            bars[j + 1].style.backgroundColor = "#e74c3c";
+
+            if (array[j] > array[j + 1]) {
+              await sleep(speed); // Wait for the specified speed
+              swap(bars, array, j, j + 1);
+            }
+
+            bars[j].style.backgroundColor = "#3498db";
+            bars[j + 1].style.backgroundColor = "#3498db";
+          }
+          bars[array.length - i - 1].style.backgroundColor = "#2ecc71";
+        }
+      }
+
+      function swap(bars, array, i, j) {
+        // Swap the heights of the bars
+        let tempHeight = bars[i].style.height;
+        bars[i].style.height = bars[j].style.height;
+        bars[j].style.height = tempHeight;
+
+        // Swap the text content of the bars
+        let tempText = bars[i].textContent;
+        bars[i].textContent = bars[j].textContent;
+        bars[j].textContent = tempText;
+
+        // Swap the elements in the array
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+    </script>
+  </body>
+</html>
