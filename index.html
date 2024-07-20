@@ -21,7 +21,7 @@
                 <h1>Visualize Algorithms with Clarity</h1>
                 <p>Unlock the power of algorithms with our intuitive visualizer. Explore step-by-step animations, code snippets, and interactive controls to deepen your understanding.</p>
                 <div class="btn-container">
-                    <button class="try-now-btn">Try it Now</button>
+                    <a href="#algorithms-section"><button class="try-now-btn">Try it Now</button></a>
                 </div>
             </div>
         </div>
@@ -30,34 +30,52 @@
 
          <!-- Section 2 starts  -->
 
-        <div class="card-section">
+        <div class="card-section" id="algorithms-section">
             <h2>Visualize a Variety of Algorithms</h2>
             <p>Our algorithm visualizer supports a wide range of data structures and algorithms, from sorting to searching and more.</p>
             <div class="cards">
-                <div class="card">
-                    <img src="assets/banner_2.webp" alt="stack">
-                    <p>A stack is a linear data structure that follows the Last In, First Out (LIFO) principle, where the most recently added element is the first to be removed.</p>
-                </div>
-                <div class="card">
-                    <img src="assets/banner_1.webp" alt="Queue">
-                    <p>A queue is a linear data structure that follows the First In, First Out (FIFO) principle, where the first element added is the first to be removed.</p>
-                </div>
-                <div class="card">
-                    <img src="assets/banner_3.webp" alt="Selection sort">
-                    <p>Selection sort is a simple comparison-based sorting algorithm that repeatedly selects the  smallest (or largest) element from the unsorted portion of the list and swaps it with the first unsorted element.</p>
-                </div>
-                <div class="card">
-                    <img src="assets/banner_4.webp" alt="Binary Search">
-                    <p>Binary search is an efficient algorithm for finding a target value within a sorted array by repeatedly dividing the search interval in half, comparing the target value to the middle element, and narrowing the search to the half where the target is likely to be.</p>
-                </div>
-                <div class="card">
-                    <img src="assets/banner_6.webp" alt="Merge Sort">
-                    <p>Merge sort is a divide-and-conquer algorithm that recursively splits an array into halves, sorts each half, and then merges the sorted halves back together.</p>
-                </div>
-                <div class="card">
-                    <img src="assets/banner_7.webp" alt="Bubble Sort">
-                    <p>Bubble sort is a simple comparison-based algorithm that repeatedly swaps adjacent elements if they are in the wrong order, gradually moving the largest element to its correct position in each pass.</p>
-                </div>
+                <a href="stack.html">
+                    <div class="card">
+                        <h4>Stack</h4>
+                        <img src="assets/banner_2.webp" alt="stack">
+                        <p>A stack is a linear data structure that follows the Last In, First Out (LIFO) principle, where the most recently added element is the first to be removed.</p>
+                    </div>
+                </a>
+                <a href="queue.html">
+                    <div class="card">
+                        <h4>Queue</h4>
+                        <img src="assets/banner_1.webp" alt="Queue">
+                        <p>A queue is a linear data structure that follows the First In, First Out (FIFO) principle, where the first element added is the first to be removed.</p>
+                    </div>
+                </a>
+                <a href="selectionSort.html">
+                    <div class="card">
+                        <h4>Selection Sort</h4>
+                        <img src="assets/banner_3.webp" alt="Selection sort">
+                        <p>Selection sort is a simple comparison-based sorting algorithm that repeatedly selects the  smallest or largest element from the unsorted portion of the list and swaps it with the first unsorted element.</p>
+                    </div>
+                </a>
+                <a href="binarySearch.html">
+                    <div class="card">
+                        <h4>Binary Search</h4>
+                        <img src="assets/banner_4.webp" alt="Binary Search">
+                        <p>Binary search is an efficient algorithm for finding a target value within a sorted array by repeatedly dividing the search interval in half, comparing the target value to the middle element.</p>
+                    </div>
+                </a>
+                <a href="mergeSort.html">
+                    <div class="card">
+                        <h4>Merge Sort</h4>
+                        <img src="assets/banner_6.webp" alt="Merge Sort">
+                        <p>Merge sort is a divide-and-conquer algorithm that recursively splits an array into halves, sorts each half, and then merges the sorted halves back together.</p>
+                    </div>
+                </a>
+                <a href="bubbleSort.html">
+                    <div class="card">
+                        <h4>Bubble Sort</h4>
+                        <img src="assets/banner_7.webp" alt="Bubble Sort">
+                        <p>Bubble sort is a simple comparison-based algorithm that repeatedly swaps adjacent elements if they are in the wrong order, gradually moving the largest element to its correct position in each pass.</p>
+                    </div>
+                </a>
                 
             </div>
         </div>
@@ -129,12 +147,12 @@
                 <img src="./assets/cutBtn.webp" alt="cut" class="toggle-btn">
             </div>
             <div class="btn-container">
-                <button id="stack">Stack</button>
-                <button id="queue">Queue</button>
-                <button id="merge-sort">Merge Sort</button>
-                <button id="binary-search">Binary Search</button>
-                <button id="selection-sort">Selection Sort</button>
-                <button id="bubble-sort">Bubble Sort</button>
+                <a href="stack.html"><button id="stack">Stack</button></a>
+                <a href="queue.html"><button id="queue">Queue</button></a>
+                <a href="mergeSort.html"><button id="merge-sort">Merge Sort</button></a>
+                <a href="binarySearch.html"><button id="binary-search">Binary Search</button></a>
+                <a href="selectionSort.html"><button id="selection-sort">Selection Sort</button></a>
+                <a href="bubbleSort.html"><button id="bubble-sort">Bubble Sort</button></a>
             </div>
         </div>    
     </div>
