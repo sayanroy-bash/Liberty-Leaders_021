@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Sort Visualizer</title>
+    <link rel="stylesheet" href="bubbleSort.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="assets/logo.webp" alt="Code Visualizer"/>
+        </div>
+        <div class="hamburger">
+          <img src="assets/hamburger.webp" alt="btn" class="hamburger-btn"/>
+        </div>
+      </header>
+      <section>
+        <main>
+          <div class="main-container">
+            <h1>Bubble Sort</h1>
+            <div id="array-container"></div>
+          <form id="array-form">
+            <input type="text" id="array-input" placeholder="Enter an array comma separated" />
+            <button type="submit">Sort</button>
+            <input type="range" id="speed-input" min="10" max="1000" value="300" />
+          </form>
+        </div>
+        <div class="description">
+          <h3>OVERVIEW</h3>
+          <p>Bubble Sort repeatedly swaps adjacent elements if they are in the wrong order, gradually moving the largest element to its correct position.
+          </p>
+          <h3>TIME COMPLEXITY</h3>
+          <p>BestCase: O(n) - when the array is already sorted.
+            AverageCase: O(n^2)
+            WorstCase when the array is sorted in reverse order</p>
+            <h3>SPACE COMPLEXITY</h3>
+            <p>O(1)</p>
+        </div>
+        </main>
+      </section>
+    </div>
+
+    <!-- sidebar starts -->
+    <div class="sidebar-section">
+      <div class="sidebar">
+          <div class="title-img-container">
+              <h2>Explore More!</h2>
+              <img src="./assets/cutBtn.webp" alt="cut" class="toggle-btn">
+          </div>
+          <div class="btn-container">
+              <a href="stack.html"><button id="stack">Stack</button></a>
+              <a href="queue.html"><button id="queue">Queue</button></a>
+              <a href="mergeSort.html"><button id="merge-sort">Merge Sort</button></a>
+              <a href="binarySearch.html"><button id="binary-search">Binary Search</button></a>
+              <a href="selectionSort.html"><button id="selection-sort">Selection Sort</button></a>
+              <a href="bubbleSort.html"><button id="bubble-sort">Bubble Sort</button></a>
+          </div>
+      </div>    
+  </div>
+  <!-- sidebar ends -->
+
+    <script src="script.js"></script>
+    <script src="bubbleSort.js"></script>
+  </body>
+</html>

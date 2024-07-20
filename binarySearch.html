@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary Search Visualization</title>
+    <link rel="stylesheet" href="binarySearch.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo"><img src="assets/logo.webp"  alt="Code Visualizer"></div>
+        <div class="hamburger"><img src="assets/hamburger.webp" alt="btn" class="hamburger-btn"></div>
+    </header>
+      
+    <section>
+      <div class="binaryMainContainer">
+        <h1>Binary Search Visualizer</h1>
+        <div id="barContainer"></div>
+        <div class="binary_search_container1">
+         <div class="input-taking">
+          <input
+          type="text"
+          id="user_input_numbers"
+          placeholder="Enter comma-separated numbers"
+        />
+        <button id="user_input_generate">Create Bars</button>
+         </div>
+          <div class="generator">
+          <input type="text" id="input_numbers" readonly />
+          <button id="random_array_generate">Generate Random Array</button>
+          </div>
+          <div class="searching">
+            <input type="number" id="search_value" placeholder="Search Value" />
+          <button id="search_button">Start Binary Search</button>
+          </div>
+          <input type="range" id="speed" min="1" max="10" value="5" />
+        </div>
+      </div>
+      <div class="description">
+        <h3>OVERVIEW</h3>
+<p>Binary Search is a fundamental algorithm in computer science used for finding an element in a sorted array. It follows the principle of dividing the search interval in half repeatedly until the target value is found or the interval is empty. Binary Search is known for its efficiency and speed, making it a widely used algorithm in various applications.</p>
+
+<h3>WHAT IS BINARY SEARCH?</h3>
+<p>Binary Search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing the search interval in half. If the value of the target element is less than the middle element of the interval, the interval is narrowed to the lower half. Otherwise, it is narrowed to the upper half. The process continues until the target element is found or the interval is empty.</p>
+
+<h3>STEPS OF BINARY SEARCH ALGORITHM</h3>
+<p>Step 1: Start with the middle element of the sorted array. Step 2: If the middle element is the target value, return its index. Step 3: If the target value is less than the middle element, repeat the search on the left half. Step 4: If the target value is greater than the middle element, repeat the search on the right half. Step 5: Continue until the target value is found or the search interval is empty.</p>
+
+<h3>PROPERTIES OF BINARY SEARCH</h3>
+<p>Efficiency: Operates in O(log n) time complexity, making it highly efficient for large datasets. Requires Sorted Data: Can only be applied to a sorted array or list. Divide and Conquer: Utilizes the divide and conquer strategy by repeatedly dividing the search interval.</p>
+
+<h3>APPLICATIONS OF BINARY SEARCH</h3>
+<p>Searching in Databases: Used to quickly find records in large databases. Dictionary Lookups: Efficiently looks up words and their meanings in a dictionary. Debugging: Helps in debugging by quickly narrowing down the location of errors in code. Data Analysis: Used in various data analysis techniques to efficiently search through data. Games: Used in games for various search-related functionalities, such as pathfinding.</p>
+
+<h3>ADVANTAGES OF USING BINARY SEARCH</h3>
+<p>High Efficiency: Much faster than linear search for large datasets due to its O(log n) time complexity. Simplicity: Relatively simple algorithm to understand and implement. Predictable Performance: Provides consistent and predictable performance regardless of the dataset size.</p>
+
+<h3>DISADVANTAGES OF USING BINARY SEARCH</h3>
+<p>Requires Sorted Data: The array must be sorted prior to performing the binary search. Static Data: Inefficient for datasets that change frequently due to the need for re-sorting. Index-Based: Only applicable to data structures that allow random access, such as arrays.</p>
+
+<h3>REAL-WORLD EXAMPLES OF BINARY SEARCH</h3>
+<p>Looking Up Words: Efficiently searching for words in a dictionary. Library Catalogs: Finding books in a sorted library catalog. Online Shopping: Searching for products in a sorted list of items. Version Control: Finding changes in a sorted list of versions in version control systems. Stock Prices: Analyzing historical stock prices for a particular date.</p>
+
+<h3>WHY IS THE TIME COMPLEXITY OF BINARY SEARCH O(LOG N)?</h3>
+<p>Explanation: Binary Search works by repeatedly dividing the search interval in half. In each step, the size of the interval is halved, leading to a logarithmic reduction in the number of elements to be checked. Therefore, the time complexity is O(log n), where n is the number of elements in the array. The base of the logarithm is 2, but in Big-O notation, the base is not specified because it only affects the constant factor, not the overall complexity.</p>
+      </div>
+    </section>
+  
+    </div>
+
+<!-- sidebar starts -->
+<div class="sidebar-section">
+  <div class="sidebar">
+      <div class="title-img-container">
+          <h2>Explore More!</h2>
+          <img src="./assets/cutBtn.webp" alt="cut" class="toggle-btn">
+      </div>
+      <div class="btn-container">
+          <a href="stack.html"><button id="stack">Stack</button></a>
+          <a href="queue.html"><button id="queue">Queue</button></a>
+          <a href="mergeSort.html"><button id="merge-sort">Merge Sort</button></a>
+          <a href="binarySearch.html"><button id="binary-search">Binary Search</button></a>
+          <a href="selectionSort.html"><button id="selection-sort">Selection Sort</button></a>
+          <a href="bubbleSort.html"><button id="bubble-sort">Bubble Sort</button></a>
+      </div>
+  </div>    
+</div>
+<!-- sidebar ends -->
+   <script src="script.js"></script>
+  </body>
+   <script src="binarySearch.js"></script>
+</html>
